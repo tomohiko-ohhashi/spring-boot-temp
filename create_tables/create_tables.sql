@@ -15,8 +15,7 @@ CREATE TABLE users(
 
 CREATE TABLE roles( 
     id INT PRIMARY KEY
-    , role_name_jp VARCHAR (8)
-    , role_name_en VARCHAR (16)
+    , name VARCHAR (8)
     , created_by INT
     , created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     , updated_by INT
