@@ -1,4 +1,4 @@
-package com.temp.controllers;
+package com.temp.apicontrollers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.temp.entities.Greeting;
 
 @RestController
-public class GreetingController {
+public class GreetingAPIController {
 
 	private static final String template = "Hello, %s!";
 	private final AtomicLong counter = new AtomicLong();

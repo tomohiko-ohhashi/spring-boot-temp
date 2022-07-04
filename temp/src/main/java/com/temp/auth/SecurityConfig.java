@@ -1,4 +1,4 @@
-package com.temp.springsecurityintro;
+package com.temp.auth;
 
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -12,27 +12,27 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.formLogin(login -> login
-                .loginProcessingUrl("/login")
-                .loginPage("/login")
-                .defaultSuccessUrl("/")
-                .failureUrl("/login?error")
-                .permitAll()
+                        .loginProcessingUrl("/login")
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/")
+                        .failureUrl("/login?error")
+                        .permitAll()
         ).logout(logout -> logout
-                .logoutSuccessUrl("/")
+                        .logoutSuccessUrl("/")
         ).authorizeHttpRequests(authz -> authz
-                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .mvcMatchers("/").permitAll()
-                .mvcMatchers("/general").hasRole("GENERAL")
-                .mvcMatchers("/admin").hasRole("ADMIN")
-                .anyRequest().authenticated()
+                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                        .mvcMatchers("/").permitAll()
+                        .mvcMatchers("/general").hasRole("GENERAL")
+                        .mvcMatchers("/admin").hasRole("ADMIN")
+                        .anyRequest().authenticated()
         );
         return http.build();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

@@ -1,4 +1,4 @@
-package com.temp.springsecurityintro;
+package com.temp.auth;
 
 import java.util.Optional;
 
