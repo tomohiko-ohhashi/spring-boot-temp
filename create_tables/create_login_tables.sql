@@ -49,12 +49,12 @@ VALUES (1, 'GENERAL')
 INSERT 
 INTO login_user(name, email, password) 
 VALUES ( 
-    '一般太郎2'
+    '一般太郎'
     , 'general@example.com'
     , '$2a$10$6fPXYK.C9rCWUBifuqBIB.GRNU.nQtBpdzkkKis8ETaKVKxNo/ltO'
 ) 
 , ( 
-    '管理太郎2'
+    '管理太郎'
     , 'admin@example.com'
     , '$2a$10$SJTWvNl16fCU7DaXtWC0DeN/A8IOakpCkWWNZ/FKRV2CHvWElQwMS'
 ); 
