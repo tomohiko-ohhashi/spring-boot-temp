@@ -42,9 +42,7 @@ CREATE TABLE user_role(
 INSERT 
 INTO roles(id, name) 
 VALUES (1, 'GENERAL')
-, (2, 'ADMIN')
-, (3, 'HEAD')
-, (4, 'MASTER'); 
+, (2, 'ADMIN'); 
 
 -- password = "general"
 -- password = "admin"
